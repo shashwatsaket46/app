@@ -17,11 +17,9 @@ public class UserRestImpl implements UserRest{
     UserService userService;
     @Override
     public ResponseEntity<String> signUp(Map<String, String> requestMap) {
-        // TODO Auto-generated method stub
         try {
             return userService.signUp(requestMap);
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
         return CafeUtils.getResponseEntity(CafeConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
